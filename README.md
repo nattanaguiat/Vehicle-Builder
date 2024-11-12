@@ -10,7 +10,7 @@ After the prompt of the questions to create a new vehicle or picking one from th
 
 ## Usage
 
-Update of a Vehicle Builder code with de oportunity of adding more types, developing code with TypeScript using Node.js
+Update of a Vehicle Builder code with the oportunity of adding more types, developing code with TypeScript using Node.js
 
 [Video Walk Through](https://drive.google.com/file/d/1qlLL2SNlqFHlIuWsdYcgT2xtz6ArB9fM/view)
 
