@@ -61,7 +61,7 @@ class Cli {
           name: 'vehicleType',
           message: 'Select a vehicle type',
           // TODO: Update the choices array to include Truck and Motorbike
-          choices: ['Car'],
+          choices: ['Car', 'Truck', 'Motorbike'],
         },
       ])
       .then((answers) => {
@@ -185,7 +185,7 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          answers.wheels,
+          [],
           parseInt(answers.towingCapacity),
         );
         // push the truck to the vehicles array
@@ -391,16 +391,24 @@ class Cli {
         } else if (answers.action === 'Tow') {
           // find the selected vehicle and perform the tow action if it is a truck
           for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Truck) {
-              this.findVehicleToTow(this.vehicles[i] as Truck);
+            if (this.vehicles[i].vin === this.selectedVehicleVin) {
+              if (this.vehicles[i] instanceof Truck){
+                this.findVehicleToTow(this.vehicles[i] as Truck);
               return;
+              } else {
+                console.log("Only Trucks can tow")
+              }
             }
           }
         } else if (answers.action === 'Wheelie') {
           // find the selected vehicle and perform the wheelie action if it is a motorbike
           for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Motorbike) {
+            if (this.vehicles[i].vin === this.selectedVehicleVin){
+             if (this.vehicles[i] instanceof Motorbike){
               (this.vehicles[i] as Motorbike).wheelie();
+             } else {
+              console.log("Only Motorbikes do wheelies")
+             }
             }
           }
         //add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous.
