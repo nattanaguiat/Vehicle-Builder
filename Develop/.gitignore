@@ -131,3 +131,7 @@ dist
 
 
 .DS_Store
+
+package-lock.jason
+
+node_modules
