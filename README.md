@@ -2,7 +2,7 @@
 
 ## Description
   
-The motivation behind this project was to update an app to be able to inclide vehicle types and develop the characteristics and qualities for each one depending on the kind of vehicle.
+The motivation behind this project was to update an app to be able to include vehicle types and develop the characteristics and qualities for each one depending on the kind of vehicle.
 
 ## Installation
 
